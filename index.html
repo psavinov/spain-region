@@ -14,6 +14,24 @@
 		p {
 			font-size: 2vmin;
 		}
+
+		button.option {
+			width: 80%;
+		}
+
+		@media only screen and (max-width: 700px) {
+			p {
+				font-size: 4vmin;
+			}
+
+			button {
+				font-size: 4vmin;
+			}
+
+			button.option {
+				width: 100%;
+			}
+		}
 	</style>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script>
@@ -637,7 +655,7 @@
 
 			var question = this.questions[current];
 
-			var div = $('<div class="col-md-5 col-xs-8 col-lg-4 viewport" style="margin: 0 auto; float: none;"></div>').append(
+			var div = $('<div class="col-md-5 col-xs-11 col-lg-4 viewport" style="margin: 0 auto; float: none;"></div>').append(
 				$('<p class="text-center"></p>').append(
 					$('<h4></h4>').text(question.brief)));
 
@@ -647,7 +665,7 @@
 
 			question.options.forEach(
 				function(option) {
-					var button = $('<button class="btn btn-primary" style="margin-right:5px; margin-top:5px; font-size: 2vmin;"></button>');
+					var button = $('<button class="btn btn-primary option" style="margin-right:5px; margin-top:5px; font-size: 2rem;"></button>');
 
 					button.text(option.text);
 
@@ -666,6 +684,7 @@
 						}
 					)
 
+					div.append($('<br/>'));
 					div.append(button);
 				}
 			);
@@ -680,7 +699,7 @@
 
 			var viewport = $('.viewport');
 
-			var div = $('<div class="col-md-5 col-xs-8 col-lg-4 text-center table-responsive viewport" style="margin: 0 auto; float: none;"></div>');
+			var div = $('<div class="col-md-5 col-xs-11 col-lg-4 text-center table-responsive viewport" style="margin: 0 auto; float: none;"></div>');
 
 			div.append($('<h4></h4>').text('Готово!'));
 			div.append($('<p class="text-justify text-info"></p>').html(
@@ -750,7 +769,7 @@
 
 		<br/>
 
-		<p class="text-primary text-justify col-md-4 col-xs-7 col-lg-3" style="margin: 0 auto; float: none;">
+		<p class="text-primary text-justify col-md-4 col-xs-10 col-lg-3" style="margin: 0 auto; float: none;">
 			Данный инструмент позволит вам подобрать наиболее подходящий регион Испании для жизни.
 			Для подготовки инструмента использовались только официальные данные испанского института статистики <a href="http://www.ine.es">INE</a>
 			за последний доступный период.
@@ -759,7 +778,7 @@
 		<br/>
 
 		<div class="viewport">
-			<button class="btn btn-primary btn-lg" onclick="Spain.nextQuestion()">
+			<button class="btn btn-primary btn-lg" onclick="Spain.nextQuestion()" style="font-size: 3rem;">
 				Подобрать регион
 			</button>
 		</div>
