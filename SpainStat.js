@@ -831,8 +831,34 @@ Spain.showResults = function() {
 	div.append($('<h4></h4>').text('Готово!'));
 	div.append($('<p class="text-justify text-info"></p>').html(
 		'Наиболее подходящим регионом Испании для вас является <b>' +
-		regions[0].name + '</b>, но также стоит обратить внимание на ТОП-5 регионов, подобранных по вашим ответам.'
+		regions[0].name + '</b>, но также стоит обратить внимание на ТОП-5 регионов, подобранных по вашим ответам.<br/>' +
+		'Поделитесь результатом в социальных сетях:'
 	));
+
+	var shareDiv = $('<div class="share"></div>');
+
+	shareDiv.html('<div class="a2a_kit a2a_kit_size_32 a2a_default_style">' +
+		'<a class="a2a_dd" href="https://www.addtoany.com/share"></a>' +
+		'<a class="a2a_button_facebook"></a>' +
+		'<a class="a2a_button_twitter"></a>' +
+		'<a class="a2a_button_google_plus"></a>' +
+		'<a class="a2a_button_tuenti"></a>' +
+		'<a class="a2a_button_telegram"></a>' +
+		'<a class="a2a_button_odnoklassniki"></a>' +
+		'<a class="a2a_button_vk"></a>' +
+		'<a class="a2a_button_mail_ru"></a>' +
+		'<a class="a2a_button_blogger"></a>' +
+		'<a class="a2a_button_linkedin"></a>' +
+		'</div>' +
+		'<script>' +
+		'var a2a_config = a2a_config || {};' +
+		'a2a_config.linkname = "Мне больше всего подходит ' + regions[0].name + ', а тебе? Выбор региона Испании!";' +
+		'a2a_config.linkurl = "https://psavinov.github.io/spain-region/";' +
+		'a2a_config.locale = "ru";' +
+		'</script>' +
+		'<script async src="https://static.addtoany.com/menu/page.js"></script>');
+
+	div.append(shareDiv);
 
 	var table = $('<table class="table table-bordered"></table>');
 
